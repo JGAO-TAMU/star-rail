@@ -8,7 +8,16 @@ def run_hsr_script(path, mode, material):
 def update_paths(): 
     global update_message_var
     hsr_path = hsr_entry.get()
+    save_path(hsr_path=hsr_path)
     update_message_var.set(f"path updated to {hsr_path}") 
+
+def save_path(hsr_path):
+    with open("railing_time//path_config.txt", "w") as file:
+        file.write(hsr_path)
+
+def load_path():
+    with open("railing_time//path_config.txt", "r") as file:
+        return file.read().strip()
 
 def change_mode(event=None):
     global modes, mode, combo, materials
@@ -39,7 +48,6 @@ def main():
     material = 'dream_flamer'
 
     message_exists = False
-    hsr_path = "D:\HSR\Star Rail\Games\StarRail.exe"
     root=tk.Tk()
     root.title("my scripts")
     root.geometry("800x600")
@@ -57,17 +65,17 @@ def main():
 
     tk.Label(root, text="star rail path:").pack()
     hsr_entry = tk.Entry(root)
-    hsr_entry.insert(0, hsr_path)
+    hsr_entry.insert(0, load_path())
     hsr_entry.pack()
     btn_update = tk.Button(root, text="update path variable", command=update_paths).pack()
     update_message_var = tk.StringVar()
     update_message = tk.Message(root, textvariable=update_message_var).pack()
 
-    btn1 = tk.Button(root, text="play star rail", command=lambda: run_hsr_script(hsr_path, mode, material)).pack()
+    btn1 = tk.Button(root, text="play star rail", command=lambda: run_hsr_script(load_path(), mode, material)).pack()
 
-    btn2 = tk.Button(root, text="play star rail", command=lambda: run_hsr_script(hsr_path, mode, material)).pack()
+    btn2 = tk.Button(root, text="play star rail", command=lambda: run_hsr_script(load_path(), mode, material)).pack()
 
-    btn3 = tk.Button(root, text="play star rail", command=lambda: run_hsr_script(hsr_path, mode, material)).pack()
+    btn3 = tk.Button(root, text="play star rail", command=lambda: run_hsr_script(load_path(), mode, material)).pack()
     
     combo= ttk.Combobox(root, values=modes)
     combo.pack()
