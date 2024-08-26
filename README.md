@@ -1,5 +1,7 @@
 ﻿# star-rail
 
+This project is in early development and not feature-complete. It may not work at all. Expect bugs and missing features. 
+
 This tool opens Honkai: Star Rail and automatically spends resin to farm materials. It also automatically claims rewards from daily missions. 
 You will need administrator rights for this to work. If using an IDE, run as administrator. maybe I will make it executable in the future.
 
