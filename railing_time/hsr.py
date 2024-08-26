@@ -55,6 +55,8 @@ def click_image(image_path, confidence=0.8, timeout=30, xoff=0, yoff=0, find_dom
                     pyautogui.scroll(-1)
                     pyautogui.scroll(-1)
                     pyautogui.scroll(-1)
+                    pyautogui.scroll(-1)
+                    pyautogui.scroll(-1)
                     print("scrolled down")
                 
                 
@@ -114,9 +116,9 @@ def star_rail_dailies(path, mode, material):
 
     ############ overworld #############
     #movecamera will happen while game is loading
-    click_image('railing_time\\railing_images\\daily_icon_unclaimed.png',confidence=.8, grayscale=True, movecamera=True, in_overworld=True)
+    click_image('railing_time\\railing_images\\daily_icon_unclaimed.png',confidence=.8, grayscale=True, movecamera=False, in_overworld=True) #set movecamera true when it works
 
-    time.sleep(2)
+    time.sleep(1)
     click_image('railing_time\\railing_images\\arrow_icon.png',confidence=.8)
     print("arrow icon clicked")
 
@@ -171,7 +173,8 @@ def star_rail_dailies(path, mode, material):
     time.sleep(1)
     click_image('railing_time\\railing_images\exit.png')
     print("clicked exit...")
-    wait_for_screen('railing_time\\railing_images\\bud.png',confidence=.5)
+    #wait_for_screen('railing_time\\railing_images\\bud.png',confidence=.5)
+    time.sleep(3) #wait for game to load. replace with something better later
     pyautogui.keyDown('esc')
     pyautogui.keyUp('esc')
     time.sleep(1)
