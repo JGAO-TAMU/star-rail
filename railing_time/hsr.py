@@ -118,8 +118,9 @@ def star_rail_dailies(path, mode, material):
     #movecamera will happen while game is loading
     click_image('railing_time\\railing_images\\daily_icon_unclaimed.png',confidence=.8, grayscale=True, movecamera=False, in_overworld=True) #set movecamera true when it works
 
-    time.sleep(1.5)
-    click_image('railing_time\\railing_images\\arrow_icon.png',confidence=.8)
+    wait_for_screen('railing_time\\railing_images\\arrow_icon.png',confidence=.9,period=0.5)
+    time.sleep(1)
+    click_image('railing_time\\railing_images\\arrow_icon.png',confidence=.9)
 
     ############# domain select ############
     click_image(f'railing_time\\railing_images\\domain_select\\{mode}.png',confidence=.7)

@@ -14,3 +14,9 @@ uploaded to github
 0.3.0-alpha 8/26/2024
 now use json file to store user configurations
 small bug fixes in hsr script
+script reached completion in testing
+
+0.3.1-alpha 8/27/2024
+add corrosion, golden, and shadow modes
+changing mode now changes material to a valid material
+fixed script getting stuck by adjusting confidence

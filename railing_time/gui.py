@@ -52,19 +52,31 @@ def change_mode(event=None):
     global modes, mode, combo, materials
     mode = combo.get()
     if(mode == 'crimson'):
-        new_materials = ['arrow_of_the_starchaser', 'countertemporal_shot', 'divine_amber', 'exquisite_colored_draft', 'flower_of_eternity', 'heaven_incinerator', 'key_of_wisdom', 'moon_rage_fang', 'obisidian_of_obsession', 'safeguard_of_amber', 'myriad_fruit', 'worldbreaker_blade']
+        new_materials = ['arrow_of_the_starchaser', 'countertemporal_shot', 'divine_amber', 'exquisite_colored_draft', 'flower_of_eternity', 
+                         'heaven_incinerator', 'key_of_wisdom', 'moon_rage_fang', 'obisidian_of_obsession', 'safeguard_of_amber', 'myriad_fruit', 'worldbreaker_blade']
     elif(mode == 'shadow'):
-        new_materials = ['dream_flamer', 'raging_heart', 'IPC_work_permit']
+        new_materials = ['Ascendant Debris','Broken Teeth of Iron Wolf','Dream Flamer','Dream Fridge','Endotherm Chitin','Gelic Chitin','Golden Crown of the Past Shadow',
+                         'Horn of Snow','IPC Work Permit','Lightning Crown of the Past Shadow','Nail of the Ape','Netherworld Token','Raging Heart','Searing Steel Blade',
+                         "Shape Shifter's Lightning Staff",'Storm Eye','Suppressing Edict','Void Cast Iron']
     elif(mode == 'golden'):
-        new_materials = ['none']
+        new_materials = ['Character EXP', 'Lightcone EXP']
     elif(mode == 'corrosion'):
-        new_materials=['hackerspace']    
+        new_materials=['Cavalry + Valorous','Champion + Thief','Disciple + Messenger','Firesmith + Wastelander','Grand Duke + Prisoner','Guard + Genius',
+                       'Hunter + Eagle','Knight + Band','Passerby + Musketeer','Pioneer + Watchmaker']    
+    combo2.set(new_materials[0])
     combo2['values'] = new_materials
 
 def change_material(event=None):
     global mode, materials, material, combo2
-    if(mode == 'crimson'):
+    '''if(mode == 'crimson'):
         material = 'crimson\\' + combo2.get()
+    elif(mode == 'shadow'):
+        material = 'shadow\\' + combo2.get()
+    elif(mode == 'golden'):
+        material = 'golden\\' + combo2.get()
+    elif(mode == 'corrosion'):
+        material = 'corrosion\\' + combo2.get() '''
+    material = combo2.get()
     #material = combo2.get()
 
 def main():
