@@ -10,3 +10,7 @@ ingame screenshots containing other materials were added to railing_images folde
 fixed numerous issues
 reaches combat on my computer, untested beyond that
 uploaded to github
+
+0.3.0-alpha 8/26/2024
+now use json file to store user configurations
+small bug fixes in hsr script

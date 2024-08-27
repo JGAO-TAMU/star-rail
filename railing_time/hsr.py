@@ -101,7 +101,7 @@ def restart(): # call when the restart button appears
     time.sleep(1)   # Wait for restart to complete
 
 
-app_path = "D:\HSR\Star Rail\Games\StarRail.exe" #path for my installation. users need to update this thru gui. gui does not remember changes for now. 
+app_path = "D:\HSR\Star Rail\Games\StarRail.exe" #path for my installation.  
 
 def star_rail_dailies(path, mode, material):
     print(path, mode, material)
@@ -118,9 +118,8 @@ def star_rail_dailies(path, mode, material):
     #movecamera will happen while game is loading
     click_image('railing_time\\railing_images\\daily_icon_unclaimed.png',confidence=.8, grayscale=True, movecamera=False, in_overworld=True) #set movecamera true when it works
 
-    time.sleep(1)
+    time.sleep(1.5)
     click_image('railing_time\\railing_images\\arrow_icon.png',confidence=.8)
-    print("arrow icon clicked")
 
     ############# domain select ############
     click_image(f'railing_time\\railing_images\\domain_select\\{mode}.png',confidence=.7)
@@ -146,6 +145,7 @@ def star_rail_dailies(path, mode, material):
     click_image('railing_time\\railing_images\\start_challenge.png',confidence=.9)
 
     ################ in combat ###############
+    time.sleep(1)
     click_image('railing_time\\railing_images\\auto_button.png',confidence=.5, grayscale=True)
 
 
@@ -179,7 +179,7 @@ def star_rail_dailies(path, mode, material):
     pyautogui.keyUp('esc')
     time.sleep(1)
     pyautogui.keyDown('altleft')
-    click_image('railing_time\\railing_images\icon.png')
+    click_image('railing_time\\railing_images\daily_icon_unclaimed.png', confidence=0.8, grayscale=True)
     pyautogui.keyUp('altleft')
     #click_image('railing_time\\railing_images\daily_icon.png')
     time.sleep(0.2)
